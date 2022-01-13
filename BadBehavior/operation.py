@@ -118,7 +118,8 @@ class RapidAccelerateOP(BadBehaviorOP):
             speed = trace.v[idx]
             rank = None
             for i in range(len(speed_section) - 1):
-                if speed_section[i] <= speed < speed_section[i + 1]:
+                # TODO 速度为负值的情况未处理，先用了绝对值，应该要在数据预处理时考虑
+                if speed_section[i] <= abs(speed) < speed_section[i + 1]:
                     rank = i
                     break
             assert rank is not None

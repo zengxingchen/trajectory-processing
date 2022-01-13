@@ -3,6 +3,7 @@ import numpy as np
 from Trace import Trace
 import matplotlib.pyplot as plt
 import pandas as pd
+# 本地字体配置，自行注释掉
 plt.rcParams['font.sans-serif'] = ['Arial Unicode MS']
 
 class BadBehavior:
@@ -32,7 +33,8 @@ class BadBehavior:
         plt.hist(times, bins=24)
         plt.ylabel("不良行为的发生频次（次）")
         plt.xlabel("不良行为的发生时段（时）")
-        plt.show()
+        plt.savefig('./results/' + self.op.__class__.__name__ + '_hist'+ ".png") # 方便批处理所有异常行为
+        # plt.show()
 
     # 统计司机的不良行为数
     def driver_analysis(self):
