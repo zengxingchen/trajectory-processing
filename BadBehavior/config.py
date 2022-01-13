@@ -2,6 +2,8 @@ from numpy import pi
 """
 这个文件最好由交院的同学完成
 """
+# 文件路径
+path_gps = r"/Users/zengxingchen/Desktop/大三/交科赛/gps_20161102.csv"
 
 # 默认单位是m/s、m/s^2、s、小时
 

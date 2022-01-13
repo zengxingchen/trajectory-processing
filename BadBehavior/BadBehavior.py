@@ -11,6 +11,7 @@ class BadBehavior:
         self.traces = traces
         self.points = []
         self.op = BadBehaviorOP()
+        self.op_name = ''
 
     def set_op(self, op):
         self.points = []
@@ -31,9 +32,9 @@ class BadBehavior:
             hour = time_str.split(" ")[1].split(":")[0]
             times.append(int(hour))
         plt.hist(times, bins=24)
-        plt.ylabel("不良行为的发生频次（次）")
-        plt.xlabel("不良行为的发生时段（时）")
-        plt.savefig('./results/' + self.op.__class__.__name__ + '_hist'+ ".png") # 方便批处理所有异常行为
+        plt.ylabel(self.op_name + "的发生频次（次）")
+        plt.xlabel(self.op_name + "的发生时段（时）")
+        plt.savefig('./results/' + self.op.kind + '_hist'+ ".png") # 方便批处理所有异常行为
         # plt.show()
 
     # 统计司机的不良行为数

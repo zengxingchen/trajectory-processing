@@ -1,6 +1,6 @@
 import pandas as pd
 from Trace import Trace
-from BadBehavior.config import split_trace_threshold
+from BadBehavior.config import split_trace_threshold, path_gps
 from visualization import plot_map
 
 
@@ -48,7 +48,6 @@ def read_data(path_gps, nrows=100000, major_id="id2", sub_id="id1"):
 
 
 if __name__ == '__main__':
-    path_gps = r"/Users/zengxingchen/Desktop/大三/交科赛/gps_20161102.csv"
     traces = read_data(path_gps, major_id="id1", sub_id="id2")
     # 把第一条轨迹绘制到地图上
     trace = traces[0]
